@@ -1,211 +1,120 @@
-import React from "react";
-const Button = ({ children, className = "", ...props }) => (
-  <button className={`bg-black text-white rounded-xl px-4 py-2 ${className}`} {...props}>
-    {children}
-  </button>
-);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Local Homebuyers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-const Card = ({ children, className = "" }) => (
-  <div className={`bg-white rounded-2xl shadow ${className}`}>{children}</div>
-);
+<body class="bg-gray-50 text-gray-900">
 
-const CardContent = ({ children, className = "" }) => (
-  <div className={`p-6 ${className}`}>{children}</div>
-);
+<header class="p-6 flex justify-between items-center shadow-sm bg-white sticky top-0 z-50">
+  <h1 class="text-2xl font-bold">Your Local Homebuyers</h1>
+  <div class="flex gap-3">
+    <a href="tel:17202631012" class="bg-black text-white px-5 py-2 rounded-xl">Call Us</a>
+    <a href="sms:17202631012?body=Hi%20I%20need%20help%20with%20my%20property" class="bg-gray-800 text-white px-5 py-2 rounded-xl">Text Us</a>
+  </div>
+</header>
 
-const Input = (props) => (
-  <input className="border p-3 rounded-xl w-full" {...props} />
-);
+<section class="text-center py-24 px-6 bg-white">
+  <h2 class="text-4xl md:text-5xl font-bold mb-6">You Don’t Have to Handle This Alone</h2>
+  <p class="text-lg md:text-xl max-w-2xl mx-auto mb-6">
+    If you're dealing with a situation where you need to sell your home — behind on payments, major life changes, or a property that’s become too much — there is a way forward.
+  </p>
+  <p class="text-gray-600 mb-6">We help you understand your situation so you can move forward with confidence.</p>
+  <p class="font-semibold mb-6">A local family wanting to help local families.</p>
+  <p class="mb-6 text-lg">Call or Text: 720-263-1012</p>
+  <div class="flex justify-center gap-3">
+    <a href="tel:17202631012" class="bg-black text-white px-6 py-3 rounded-xl">Call Us</a>
+    <a href="sms:17202631012?body=Hi%20I%20need%20help%20with%20my%20property" class="bg-gray-800 text-white px-6 py-3 rounded-xl">Text Us</a>
+  </div>
+</section>
 
-const Textarea = (props) => (
-  <textarea className="border p-3 rounded-xl w-full" rows="4" {...props} />
-);
+<section class="py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-6">This Might Be For You If…</h2>
+  <p class="max-w-2xl mx-auto text-lg text-gray-700">
+    • You’re behind on payments or worried about foreclosure<br>
+    • You inherited a property you don’t want to keep<br>
+    • You need to move quickly and can’t wait months<br>
+    • The house needs repairs you can’t afford<br>
+    • You’re dealing with a difficult situation and just need a way out<br>
+    • Managing a property has become overwhelming — constant repairs, tenants, or stress
+  </p>
+</section>
 
-export default function HomePage() {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* HEADER */}
-      <header className="p-6 flex justify-between items-center shadow-sm bg-white sticky top-0 z-50">
-        <h1 className="text-2xl font-bold">Your Local Homebuyers</h1>
-        <div className="flex gap-3">
-          <a href="tel:17202631012">
-            <Button className="px-6">Call Us</Button>
-          </a>
-          <a href="sms:17202631012?&body=Hi%2C%20I%20need%20help%20with%20my%20property.%20I%E2%80%99m%20not%20sure%20what%20to%20do%20next.">
-            <Button className="px-6">Text Us</Button>
-          </a>
-        </div>
-      </header>
+<section class="bg-gray-100 py-16 px-6">
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
+    <h2 class="text-2xl font-bold mb-4 text-center">Tell Us What’s Going On</h2>
+    <p class="text-center text-gray-600 mb-6">Just a conversation to see how we can help.</p>
 
-      {/* HERO */}
-      <section className="text-center py-24 px-6 bg-white">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
-        >
-          You Don’t Have to Handle This Alone
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <form onsubmit="event.preventDefault(); alert('Thanks! We will reach out shortly.');">
+      <div class="grid md:grid-cols-2 gap-4">
+        <input placeholder="Full Name" class="border p-3 rounded-xl w-full" required>
+        <input placeholder="Phone Number" class="border p-3 rounded-xl w-full" required>
+        <input placeholder="Property Address" class="border p-3 rounded-xl w-full md:col-span-2">
+        <textarea placeholder="Briefly describe your situation" class="border p-3 rounded-xl w-full md:col-span-2"></textarea>
+      </div>
 
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
-          If you're dealing with a situation where you need to sell your home — behind on payments, major life changes, or a property that’s become too much — there is a way forward.
-        </p>
+      <div class="text-center mt-6">
+        <button type="submit" class="bg-black text-white px-8 py-4 rounded-xl">See My Options</button>
+      </div>
+    </form>
 
-        <p className="text-md max-w-xl mx-auto mb-6 text-gray-600">
-          We help you understand your options clearly so you can move forward with confidence.
-        </p>
+    <p class="text-sm text-gray-500 mt-3 text-center">
+      We’ll reach out personally. Or call/text 720-263-1012.
+    </p>
+  </div>
+</section>
 
-        <p className="font-semibold mb-6">We’re a local family here to help other local families.</p>
+<section class="py-20 px-6 text-center bg-white">
+  <h2 class="text-3xl font-bold mb-6">What to Expect</h2>
 
-        <p className="mb-6 text-lg">Call or Text: 720-263-1012</p>
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+    <div class="bg-white p-6 rounded-xl shadow">1. Reach Out — We’re here to listen.</div>
+    <div class="bg-white p-6 rounded-xl shadow">2. Understand — We take time to understand what you're going through so we can align the best options for you.</div>
+    <div class="bg-white p-6 rounded-xl shadow">3. Explore — We look at what actually works for you.</div>
+    <div class="bg-white p-6 rounded-xl shadow">4. Plan — We show you exactly how it works.</div>
+    <div class="bg-white p-6 rounded-xl shadow">5. Move Forward — You choose what feels right.</div>
+    <div class="bg-white p-6 rounded-xl shadow">6. Closing — No realtor fees, no closing costs, no surprises, and you choose the timeline.</div>
+  </div>
+</section>
 
-        <Button className="text-lg px-8 py-4">See stories like yours</Button>
-      </section>
+<section class="bg-red-50 py-20 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-6">What Happens If You Wait?</h2>
 
-      {/* WHO THIS IS FOR */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-6">This Might Be For You If…</h2>
-        <p className="max-w-2xl mx-auto text-lg text-gray-700">
-          • You’re behind on payments or worried about foreclosure<br/>
-          • You inherited a property you don’t want to keep<br/>
-          • You need to move quickly and can’t wait months<br/>
-          • The house needs repairs you can’t afford<br/>
-          • You’re dealing with a difficult situation and just need a way out<br/>
-          • Managing a property has become overwhelming — constant repairs, tenants, or stress
-        </p>
-      </section>
+  <div class="max-w-3xl mx-auto text-left space-y-4 text-lg text-gray-700">
+    <p>• The situation usually gets heavier, not easier</p>
+    <p>• Missed payments can turn into foreclosure</p>
+    <p>• Stress builds emotionally and financially</p>
+    <p>• Options become more limited</p>
+    <p>• Tenant issues can lead to damage and costly repairs</p>
+  </div>
+</section>
 
-      {/* FORM */}
-      <section className="bg-gray-100 py-16 px-6">
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
-          <h2 className="text-2xl font-bold mb-4 text-center">Tell Us What’s Going On</h2>
-          <p className="text-center text-gray-600 mb-6">
-            Just a conversation to see how we can help.
-          </p>
+<section id="stories" class="py-20 px-6 text-center bg-white">
+  <h2 class="text-3xl font-bold mb-10">Stories From People We’ve Helped</h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <Input placeholder="Full Name" />
-            <Input placeholder="Phone Number" />
-            <Input placeholder="Property Address" className="md:col-span-2" />
-            <Textarea placeholder="Briefly describe your situation" className="md:col-span-2" />
-          </div>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="bg-white p-6 rounded-xl shadow">“I was overwhelmed and didn’t know what to do. They helped me move forward.”<br><strong>— Sarah M.</strong></div>
+    <div class="bg-white p-6 rounded-xl shadow">“They made everything simple when I needed to move fast.”<br><strong>— Jason R.</strong></div>
+    <div class="bg-white p-6 rounded-xl shadow">“Finally felt like I had a way out.”<br><strong>— Linda K.</strong></div>
+  </div>
+</section>
 
-          <div className="text-center mt-6">
-            <Button className="text-lg px-8 py-4">See My Options</Button>
-          </div>
+<section class="py-20 px-6 bg-white text-center">
+  <h2 class="text-3xl font-bold mb-6">Meet Brittany & Orion</h2>
 
-          <p className="text-sm text-gray-500 mt-3 text-center">
-            We’ll reach out personally. Or you can call/text us directly at 720-263-1012.
-          </p>
-        </div>
-      </section>
+  <p class="max-w-2xl mx-auto text-gray-700 mb-6">
+    We’re a local family helping people through difficult real estate situations.
+  </p>
 
-      {/* STEP BY STEP */}
-      <section className="py-20 px-6 text-center bg-white">
-        <h2 className="text-3xl font-bold mb-6">What to Expect</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-          {[
-            { title: "1. Reach Out", desc: "Just tell us what’s going on — we’re here to listen." },
-            { title: "2. Understand Your Situation", desc: "We take time to truly understand what you're going through so nothing gets overlooked." },
-            { title: "3. Explore Solutions", desc: "We look at what actually works for you — not just one option." },
-            { title: "4. Get a Plan", desc: "If selling makes sense, we’ll show you exactly how it works." },
-            { title: "5. Move Forward", desc: "You choose what feels right. We move at your pace." },
-            { title: "6. Closing", desc: "When you're ready, we handle everything so you can move forward with relief — no realtor fees, no closing costs, no surprises, and you choose the timeline." }
-          ].map((step) => (
-            <Card key={step.title} className="rounded-2xl shadow-md">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.desc}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+  <img src="family.jpg" class="mx-auto rounded-xl h-80 object-cover">
 
-      {/* WHAT IF NOTHING */}
-      <section className="bg-red-50 py-20 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-6">What Happens If You Wait?</h2>
-        <div className="max-w-3xl mx-auto text-left space-y-4 text-lg text-gray-700">
-          <p>• The situation usually gets heavier, not easier.</p>
-          <p>• Missed payments can turn into foreclosure.</p>
-          <p>• Stress builds — financially and emotionally.</p>
-          <p>• Your options can become more limited over time.</p>
-          <p>• Ongoing tenant issues can lead to damage, missed rent, and more costly repairs.</p>
-        </div>
-        <p className="mt-8 text-xl font-semibold">
-          Even a quick conversation can give you clarity.
-        </p>
-      </section>
+  <p class="mt-3 text-sm text-gray-600">Helping families across Colorado find a way forward.</p>
 
-      {/* TESTIMONIALS */}
-      <section className="py-20 px-6 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-10">Stories From People We’ve Helped</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
-          {[
-            {
-              text: "I was behind on payments and honestly overwhelmed. They helped me understand my options without pressure.",
-              name: "— Sarah M., Fort Collins"
-            },
-            {
-              text: "I needed to move fast and didn’t have time for listings. They made everything simple.",
-              name: "— Jason R., Loveland"
-            },
-            {
-              text: "I inherited a house I couldn’t handle. They gave me a clear path forward.",
-              name: "— Linda K., Greeley"
-            }
-          ].map((t, i) => (
-            <Card key={i} className="rounded-2xl shadow-md">
-              <CardContent className="p-6">
-                <p className="mb-4 italic">“{t.text}”</p>
-                <p className="font-semibold">{t.name}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+  <p class="mt-4">You’ll get to meet our dog Rio. He’s part of the team too! 🐾</p>
+</section>
 
-      {/* FINAL CTA */}
-      <section className="bg-blue-600 text-white py-20 text-center px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">You Don’t Have to Stay Stuck</h2>
-        <p className="mt-4 text-lg font-semibold">Call or Text: 720-263-1012</p>
-        <p className="mb-6 max-w-xl mx-auto text-lg">
-          Even if you’re unsure what to do next — talking through it can help.
-        </p>
-        <Button className="bg-white text-blue-600 text-lg px-8 py-4">Start the Conversation</Button>
-      </section>
-
-      {/* ABOUT */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Meet Brittany & Orion</h2>
-            <p className="text-gray-700 mb-4">
-              We started Your Local Homebuyers to help people through situations that don’t have easy answers. Behind every house is a real story — and we believe people deserve clarity and real options.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Brittany focuses on making sure every homeowner feels heard and supported, while Orion works on finding solutions that actually fit each situation.
-            </p>
-            <p className="text-gray-700">
-              And yes — you’ll get to meet our dog Rio. He’s part of the team too! 🐾
-            </p>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-md text-center">
-            <img 
-              src="/family.jpg" 
-              alt="Brittany, Orion, and their dog Rio"
-              className="w-full h-80 object-cover"
-            />
-            <p className="mt-3 text-sm text-gray-600">
-              Helping families across Colorado find a way forward.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-center p-6 text-sm text-gray-500">
-        © {new Date().getFullYear()} Your Local Homebuyers. All rights reserved.
-      </footer>
-    </div>
-  );
-}
+</body>
+</html>
